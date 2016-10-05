@@ -9,23 +9,23 @@ With Ansible Container you get:
 
 - Tools you already know: Ansible and Docker Compose
 - Highly reusable code by way of Ansible roles
-- Easy to read and understand image build instructions
-- Repeatable image build process
-- Auto-generated deployment artifacts directly from your orchestration document
-
+- Easy to read and understand image build instructions contained in an playbook
+- Repeatable and testable image build process
+- A single orchestration document with settings for development and production
+- Auto-generated deployment role and playbook  
 
 ## Requirements
 
 [Ansible Container](https://github.com/ansible/ansible-container)
 
 Ansible Container requires access to a running Docker Engine or Docker Machine. For help with the installation, see
-our [installation guide](https://docs.ansible.com/ansible-container#install).
+our [installation guide](http://docs.ansible.com/ansible-container/installation.html).
 
 
 ## Usage
 
-To run this app locally, create a project directory and then initialize it with Ansible Container, specifying this 
-project as the template:
+To run this app locally, create a project directory, and initialize it using Ansible Container. Pass the name of this
+project to the `init` command, and you'll instantly have a ready-to-go application:
 
 ```
 $ mkdir demo
@@ -33,7 +33,7 @@ $ cd demo
 $ ansible-container init chouseknecht.django-gulp-nginx 
 ```
 
-From your project directory build the images:
+Now from your project directory build the images:
 
 ```
 $ ansible-container build
