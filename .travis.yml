@@ -20,6 +20,7 @@ script:
   - docker info
   - ansible-container build
   - ansible-container run -d
+  - cd test && ansible-playbook -i inventory test.yml
 
 notifications:
   email: false
