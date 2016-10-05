@@ -18,11 +18,9 @@ script:
   - docker version
   - docker-compose version
   - docker info
-  - test/run.sh
-
-after_success:
   - ansible-container build
   - ansible-container run -d
 
 notifications:
   email: false
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
