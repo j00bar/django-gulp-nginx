@@ -1,5 +1,7 @@
 # django-gulp-nginx
 
+[![Build Status](https://travis-ci.org/chouseknecht/django-gulp-nginx.svg?branch=master)](https://travis-ci.org/chouseknecht/django-gulp-nginx)
+
 Simple Django web application to demo [Ansible Container](https://github.com/ansible/ansible-container).
 
 Ansible Container makes it possible to build container images using Ansible Playbooks rather than Dockerfile, and
