@@ -3,6 +3,9 @@
   gather_facts: no
   connection: local
   tasks:
+    - name: Pause
+      pause: seconds=5
+ 
     - name: Get the container IP address
       command: '{% raw %}docker inspect --format "{{ .NetworkSettings.IPAddress }}" ansible_gulp_1{% endraw %}'
       register: output
