@@ -29,4 +29,4 @@
   register: gulp_assets
 - name: Fetch built assets
   fetch: src="{{ item.path }}" dest=/tmp
-  with_items: gulp_assets.files
+  with_items: "{{ gulp_assets.files }}"
