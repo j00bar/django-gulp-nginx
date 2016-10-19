@@ -3,7 +3,7 @@
   get_url: dest=/usr/bin/dumb-init url=https://github.com/Yelp/dumb-init/releases/download/v1.0.2/dumb-init_1.0.2_amd64 mode=0775 validate_certs=no
 - name: Install python deps
   yum: name="{{ item }}" state=latest update_cache=yes
-  with_items: DJANGO_RPM_DEPS
+  with_items: "{{ DJANGO_RPM_DEPS }}"
 - name: Make Django user
   user: name="{{ DJANGO_USER }}" state=present createhome=yes home="{{ DJANGO_ROOT }}"
 - name: Make virtualenv dir
@@ -29,7 +29,7 @@
   register: django_assets
 - name: Fetch Django static assets
   fetch: src="{{ item.path }}" dest=/tmp
-  with_items: django_assets.files
+  with_items: "{{ django_assets.files }}"
 - name: Wait for the database to come up...
   wait_for: host=postgresql port=5432 delay=10
 - name: Apply database migrations

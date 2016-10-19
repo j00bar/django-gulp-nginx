@@ -38,7 +38,7 @@ services:
       working_dir: "{{ NODE_HOME }}"
       command: ['/usr/bin/dumb-init', '{{ NODE_ROOT }}/node_modules/.bin/gulp']
       ports:
-        - "80:{{ GULP_DEV_PORT }}"
+        - "8080:{{ GULP_DEV_PORT }}"
       volumes:
         - "$PWD:{{ NODE_HOME }}"
       links:
